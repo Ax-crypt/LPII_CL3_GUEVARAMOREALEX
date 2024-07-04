@@ -1,16 +1,12 @@
 package com.bd.modelo;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-public class TblProductoCl3 {
-	@Entity
-	@Table(name="tbl_productoscl3")
-	public class TblProductocl1 implements Serializable {
-		private static final long serialVersionUID = 1L;
+@Entity
+@Table(name="tbl_productoscl3")
+public class TblProductocl3 {
 
 		@Id
 		private int idproducto;
@@ -24,7 +20,7 @@ public class TblProductoCl3 {
 
 		@Override
 		public String toString() {
-			return "TblProductocl1 [idproducto=" + idproducto + ", nombre=" + nombre + ", precioVenta=" + precioVenta
+			return "TblProductocl3 [idproducto=" + idproducto + ", nombre=" + nombre + ", precioVenta=" + precioVenta
 					+ ", stock=" + stock + ", precioCompra=" + precioCompra + ", estado=" + estado + ", descripcion="
 					+ descripcion + "]";
 		}
@@ -46,7 +42,7 @@ public class TblProductoCl3 {
 		public void setPrecioCompra(double precioCompra) {
 			this.precioCompra = precioCompra;
 		}
-		public TblProductocl1() {
+		public TblProductocl3() {
 		}
 		public int getIdproducto() {
 			return this.idproducto;
@@ -75,4 +71,3 @@ public class TblProductoCl3 {
 
 
 	}
-}

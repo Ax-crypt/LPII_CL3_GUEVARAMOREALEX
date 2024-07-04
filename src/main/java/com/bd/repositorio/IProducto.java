@@ -2,8 +2,8 @@ package com.bd.repositorio;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.bd.modelo.TblProductoCl3;
+import com.bd.modelo.TblProductocl3;
 
-public interface IProducto extends CrudRepository<TblProductoCl3, Integer>{
+public interface IProducto extends CrudRepository<TblProductocl3, Integer>{
 	
 }
