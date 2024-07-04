@@ -26,7 +26,7 @@ public class ProductoControlador {
 	  private IProductoServicio iProductoServicio;
 	  //creamos el metodo listado..
 	  @GetMapping("ListadoProducto")
-	  public String ListadoAuto(Model modelo) {
+	  public String ListadoProducto(Model modelo) {
 	   //recuperamos el listado de autos..
 	   List<TblProductocl3> listado=iProductoServicio.ListadoProductos();
 	   for(TblProductocl3 lis:listado) {
@@ -42,19 +42,19 @@ public class ProductoControlador {
 
 	  //creamos los respectivos para metodos para registrar...
 	  @GetMapping("/RegistrarProducto")
-	  public String RegistrarCliente(Model modelo) {
+	  public String Registrar(Model modelo) {
 	   //realizamos la respectiva instancia...
 	 TblProductocl3 producto = new TblProductocl3();
 	   //enviamos a la vista...
-	   modelo.addAttribute("regcliente",producto);
+	   modelo.addAttribute("regproducto",producto);
 	   //retornamos
 	   return "/Vistas/CrearProducto";	   
 	  }  //fin del metodo registrar.
 	  
 	  
 	  //realizamos el mapeo con postmapping
-	  @PostMapping("/GuardarProducto")
-	  public String GuardarAuto(@ModelAttribute TblProductocl3  producto,Model modelo) {
+	  @PostMapping("/RegistrarProducto")
+	  public String GuardarProducto(@ModelAttribute TblProductocl3  producto,Model modelo) {
 		  iProductoServicio.RegistrarProducto(producto);
 	   System.out.println("dato registrado en la bd");
 	   //retornamos al listado...
@@ -68,7 +68,7 @@ public class ProductoControlador {
 	  public String Editar(@PathVariable("id") Integer idproducto,Model modelo) {
 		  TblProductocl3 producto=iProductoServicio.BuscarProducto(idproducto);
 	   //enviamos hacia la vista...
-	   modelo.addAttribute("regcliente",producto);
+	   modelo.addAttribute("regproducto",producto);
 	   //retornamos el frmcrearcliente...
 	   return "/Vistas/CrearProducto"; 
 	  }  //fin del metodo editar...
